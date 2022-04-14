@@ -1,5 +1,10 @@
 ﻿spring:
   profiles: default
+  devtools:
+    remote:
+      secret: mysecret
+    restart:
+      enabled: true
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
