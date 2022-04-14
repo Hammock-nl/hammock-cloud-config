@@ -2,6 +2,9 @@
   config:
     activate:
       on-profile: default
+  devtools:
+    remote:
+      secret: mysecret
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
@@ -11,9 +14,6 @@ spring:
   config:
     activate:
       on-profile: docker
-  devtools:
-    remote:
-      secret: mysecret
   zipkin:
     baseUrl: http://tracing:9411
 server:
