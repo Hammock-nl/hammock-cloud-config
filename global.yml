@@ -18,10 +18,10 @@ spring:
     remote:
       secret: globalmysecret
   zipkin:
-    baseUrl: http://tracing:9411
+    baseUrl: http://tracing:8201
 server:
   port: 8082
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/
+      defaultZone: http://discovery:8102/eureka/

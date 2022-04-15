@@ -1,5 +1,5 @@
 server:
-  port: 9411
+  port: 8201
 
 ---
 spring:
@@ -17,4 +17,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/
+      defaultZone: http://discovery:8102/eureka/
