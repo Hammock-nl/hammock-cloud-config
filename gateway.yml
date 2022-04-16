@@ -6,7 +6,6 @@ zuul:
     gateway: /gateway/**
 
 server:
-  port: 8000
   compression:
     enabled: true
     mime-types: application/json,text/css,application/javascript
@@ -14,14 +13,13 @@ server:
 
 # Internationalization
 spring.messages.basename: messages/messages
-
 ---
 spring:
   config:
     activate:
       on-profile: docker
   zipkin:
-    baseUrl: http://tracing:8201
+    baseUrl: http://tracing:9411
 eureka:
   client:
     serviceUrl:
