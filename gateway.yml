@@ -23,4 +23,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery:8102/eureka/
+      defaultZone: http://discovery:8080/eureka/
