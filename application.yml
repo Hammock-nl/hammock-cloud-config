@@ -20,6 +20,8 @@ spring:
       allow-override: true
       # Override configuration with any local property source
       override-none: true
+  datasource:
+    data: classpath*:postgres/data.sql
   jpa:
     # Allow script-based schema and data imports to run next to Hibernate database initialization.
     defer-datasource-initialization: true
