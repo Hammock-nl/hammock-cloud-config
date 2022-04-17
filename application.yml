@@ -24,7 +24,7 @@ spring:
     data: classpath*:db/postgres/data.sql
     initialization-mode: ALWAYS
   jpa:
-    # Still run data.sql on database initialization.
+    # Allow script-based schema and data imports to run next to Hibernate database initialization.
     defer-datasource-initialization: true
     open-in-view: false
     hibernate:
@@ -32,6 +32,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    # Always run database initialization scripts.
+    init-mode: always
 
 # Spring Boot 1.5 makes actuator secure by default
 management.security.enabled: false
