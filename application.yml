@@ -24,6 +24,8 @@ spring:
     data: classpath*:db/postgres/data.sql
     initialization-mode: ALWAYS
   jpa:
+    # Still run data.sql on database initialization.
+    defer-datasource-initialization: true
     open-in-view: false
     hibernate:
       ddl-auto: update
