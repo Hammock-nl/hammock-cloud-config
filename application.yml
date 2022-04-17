@@ -20,10 +20,19 @@ spring:
       allow-override: true
       # Override configuration with any local property source
       override-none: true
+  datasource:
+    data: classpath*:db/postgres/data.sql
+    url: jdbc:postgresql://localhost:5432/hammock
+    username: postgres
+    password: postgres
+    initialization-mode: ALWAYS
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 # Spring Boot 1.5 makes actuator secure by default
 management.security.enabled: false
@@ -37,7 +46,7 @@ spring.cloud.refresh.refreshable: false
 # Logging
 logging.level.org.springframework: INFO
 
-# Metrics
+## Metrics
 #management:
 #  endpoint:
 #    metrics:
@@ -69,16 +78,3 @@ logging.level.org.springframework: INFO
 #      repository: false
 #      rest-controller: false
 #      service: false
-#
-#---
-#spring:
-#  config:
-#    activate:
-#      on-profile: mysql
-#  datasource:
-#    schema: classpath*:db/mysql/schema.sql
-#    data: classpath*:db/mysql/data.sql
-#    url: jdbc:mysql://localhost:3306/hammock?useSSL=false
-#    username: root
-#    password:
-#    initialization-mode: ALWAYS
