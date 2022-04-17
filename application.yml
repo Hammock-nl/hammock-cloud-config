@@ -8,9 +8,6 @@ server:
 
 # embedded database init
 spring:
-#  datasource:
-#    schema: classpath*:db/hsqldb/schema.sql
-#    data: classpath*:db/hsqldb/data.sql
   sleuth:
     sampler:
       probability: 1.0
@@ -21,18 +18,10 @@ spring:
       # Override configuration with any local property source
       override-none: true
   jpa:
-    # Allow script-based schema and data imports to run next to Hibernate database initialization.
-    defer-datasource-initialization: true
     open-in-view: false
     hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-  sql:
-    # Always run database initialization scripts.
-    init:
-      mode: always
+      ddl-auto: none
+      dialect: org.hibernate.dialect.PostgreSQLDialect
 
 # Spring Boot 1.5 makes actuator secure by default
 management.security.enabled: false
