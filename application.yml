@@ -22,9 +22,6 @@ spring:
       override-none: true
   datasource:
     data: classpath*:db/postgres/data.sql
-    url: jdbc:postgresql://localhost:5432/hammock
-    username: postgres
-    password: postgres
     initialization-mode: ALWAYS
   jpa:
     open-in-view: false
@@ -45,6 +42,16 @@ spring.cloud.refresh.refreshable: false
 
 # Logging
 logging.level.org.springframework: INFO
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+  datasource:
+    url: jdbc:postgresql://database:8101/hammock
+    username: postgres
+    password: postgres
 
 ## Metrics
 #management:
