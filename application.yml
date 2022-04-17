@@ -49,7 +49,7 @@ spring:
     activate:
       on-profile: docker
   datasource:
-    url: jdbc:postgresql://database:8101/hammock
+    url: jdbc:postgresql://database:5432/hammock
     username: postgres
     password: postgres
 
